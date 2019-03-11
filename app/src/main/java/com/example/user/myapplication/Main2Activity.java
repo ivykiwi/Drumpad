@@ -16,6 +16,7 @@ public class Main2Activity extends AppCompatActivity {
     private Button btnn1, btnn2, btnn3, btnn4, btnn5, btnn6, btnn7, btnn8, btnn9, btnn10;
     private MediaPlayer btn1S, btn2S, btn3S, btn4S, btn5S, btn6S, btn7S, btn8S, btn9S;
     private int a;
+    Button Base;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,18 @@ public class Main2Activity extends AppCompatActivity {
         String tpass = Main.getStringExtra("tpass");
 
         Login.setText("Добро пожаловать " + tlogin);
+
+
+        Base = (Button) findViewById(R.id.btn);
+        View.OnClickListener BaseClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Main3 = new Intent(Main2Activity.this, Main3Activity.class);
+                startActivity(Main3);
+            }
+        };
+        Base.setOnClickListener(BaseClick);
+
 
         btnn1 = (Button)findViewById(R.id.btn1);
         btnn2 = (Button)findViewById(R.id.btn2);
